@@ -8,7 +8,6 @@
     "start": "next start"
   },
   "dependencies": {
-    "@fullpage/react-fullpage": "^0.1.19",
     "@headlessui/react": "^1.0.0",
     "@heroicons/react": "^1.0.1",
     "next": "10.1.3",
