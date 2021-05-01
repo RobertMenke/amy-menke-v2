@@ -38,6 +38,12 @@ a {
   animation-timing-function: ease;
 }
 
+.fade-down-large {
+    animation-name: fadeDownLarge;
+    animation-duration: 0.7s;
+    animation-timing-function: ease;
+}
+
 .anim-delay-100 {
   animation-delay: 100ms;
 }
@@ -73,6 +79,16 @@ a {
 
   100% {
     transform: translateY(0%);
+  }
+}
+
+@keyframes fadeDownLarge {
+  0% {
+    transform: translate(-0.75rem, -2rem);
+  }
+
+  100% {
+      transform: translate(-0.75rem, -1rem);
   }
 }
 
