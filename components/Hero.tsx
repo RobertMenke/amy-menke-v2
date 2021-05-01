@@ -29,13 +29,13 @@ export function Hero(props: Props) {
                         >
                             <SunriseIcon />
                         </SectionIcon>
-                        <h4
+                        <span
                             className={`${
                                 showElements ? 'opacity-100' : 'opacity-0'
                             } transition-opacity duration-700 fade-down text-green-400 font-extrabold mt-4 lg:mt-12`}
                         >
                             WELCOME
-                        </h4>
+                        </span>
                         <h1
                             className={`${
                                 showElements ? 'opacity-100' : 'opacity-0'
@@ -43,13 +43,13 @@ export function Hero(props: Props) {
                         >
                             Amy Menke
                         </h1>
-                        <h4
+                        <h2
                             className={`${
                                 showElements ? 'opacity-100' : 'opacity-0'
                             } transition-opacity duration-700 text-2xl font-semibold mt-2 fade-left`}
                         >
                             Licensed Mental Health Counselor & Life Coach
-                        </h4>
+                        </h2>
                         <p
                             className={`${
                                 showElements ? 'opacity-100' : 'opacity-0'
@@ -125,7 +125,8 @@ export function Hero(props: Props) {
                 <img
                     className="w-full object-cover sm:hidden md:hidden lg:block md:w-full md:h-full"
                     src="/couple_medium.jpg"
-                    alt=""
+                    alt="Couple Spending Time Outside"
+                    loading={'lazy'}
                 />
             </div>
             <svg

@@ -8,7 +8,7 @@ class MyDocument extends Document {
 
     render() {
         return (
-            <Html>
+            <Html lang={'EN'}>
                 <Head>
                     <title>Amy Menke · Licensed Mental Health Counselor</title>
                     <meta
@@ -49,7 +49,25 @@ class MyDocument extends Document {
                     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
                     <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
                     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-                    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+                    <!-- https://fonts.gstatic.com is the font file origin -->
+                    <!-- It may not have the same origin as the CSS file (https://fonts.googleapis.com) -->
+                    <link rel="preconnect"
+                          href="https://rsms.me"
+                          crossorigin />
+
+                    <!-- We use the full link to the CSS file in the rest of the tags -->
+                    <link rel="preload"
+                          as="style"
+                          href="https://rsms.me/inter/inter.css" />
+
+                    <link rel="stylesheet"
+                          href="https://rsms.me/inter/inter.css"
+                          media="print" onload="this.media='all'" />
+
+                    <noscript>
+                      <link rel="stylesheet"
+                            href="https://rsms.me/inter/inter.css" />
+                    </noscript>
                 </Head>
                 <body className={'font-sans'}>
                     <Main />
