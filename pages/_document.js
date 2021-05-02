@@ -11,6 +11,7 @@ class MyDocument extends Document {
             <Html lang={'EN'}>
                 <Head>
                     <title>Amy Menke · Licensed Mental Health Counselor</title>
+                    <meta name="viewport" content="width=device-width, initial-scale=1" />
                     <meta
                         name="Description"
                         content="Amy Menke is a Licensed Mental Health Counselor and Life Coach in Saint Petersburg, Florida offering phone and in-office appointments."
@@ -56,7 +57,7 @@ class MyDocument extends Document {
                         rel="stylesheet"
                         href="https://rsms.me/inter/inter.css"
                         media="print"
-                        onload="this.media='all'"
+                        onLoad="this.media='all'"
                     />
 
                     <noscript>
