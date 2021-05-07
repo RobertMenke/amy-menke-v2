@@ -15,7 +15,7 @@ export function Hero(props: Props) {
     }, [])
 
     return (
-        <div className={'flex'}>
+        <div className={'flex relative'}>
             <div className={'flex flex-col justify-between w-full lg:w-1/2'}>
                 <div className="flex flex-col p-8 md:p-32 lg:w-full">
                     <TopNav {...props} />
@@ -99,7 +99,7 @@ export function Hero(props: Props) {
                     target={'__blank'}
                     className={`${
                         showElements ? 'opacity-100' : 'opacity-0'
-                    } transition-opacity duration-700 fade-up pl-8 md:pl-32 hover:underline cursor-pointer`}
+                    } transition-opacity duration-700 fade-up pl-8 md:pl-32 hover:underline cursor-pointer pb-4`}
                 >
                     <div>
                         <span
@@ -121,7 +121,7 @@ export function Hero(props: Props) {
                     </div>
                 </a>
             </div>
-            <div className="hidden lg:block lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
+            <div className="hidden lg:block lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 min-h-screen">
                 <img
                     className="w-full object-cover sm:hidden md:hidden lg:block md:w-full md:h-full"
                     src="/couple_medium.jpg"
@@ -130,7 +130,7 @@ export function Hero(props: Props) {
                 />
             </div>
             <svg
-                className="hidden lg:block absolute left-1/2 inset-y-0 h-full w-48 text-white"
+                className="hidden lg:block absolute left-1/2 inset-y-0 h-full w-48 text-white min-h-screen"
                 fill="currentColor"
                 viewBox="0 0 100 100"
                 preserveAspectRatio="none"
