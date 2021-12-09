@@ -36,7 +36,7 @@ export const IntakeForms = React.forwardRef((props, ref: ForwardedRef<HTMLDivEle
             <DownloadForm
                 title={'Counseling'}
                 description={'Standard counseling intake forms'}
-                link={'/Counseling Intake.docx'}
+                link={'/Counseling Intake.pdf'}
             />
             <DownloadForm
                 title={'Counseling for Minors'}
