@@ -5,12 +5,16 @@ interface Props {
     toColor: string
     className?: string
     children: React.ReactNode
+    // hack
+    removeBottomMargin?: boolean
 }
 
 export function SectionIcon(props: Props) {
     return (
         <div
-            className={`w-16 h-12 rounded-xl mb-8 bg-gradient-to-br flex items-center justify-center ${props.fromColor} ${props.toColor} mb-8 ${props.className || ''}`}
+            className={`w-16 h-12 rounded-xl bg-gradient-to-br flex items-center justify-center ${props.fromColor} ${
+                props.toColor
+            } ${props.removeBottomMargin ? '' : 'mb-8'} ${props.className || ''}`}
         >
             {props.children}
         </div>
@@ -28,7 +32,13 @@ export function DownloadIcon(props: React.SVGProps<SVGSVGElement>) {
                 className={'dl-icon-path'}
                 d="M22 14v7c0 .55-.45 1-1 1H3c-.55 0-1-.45-1-1v-7M12 2v15"
             />
-            <path className={'dl-icon-path'} strokeLinejoin="round" strokeLinecap="round" strokeWidth={2.5} d="M17 12l-5 5-5-5" />
+            <path
+                className={'dl-icon-path'}
+                strokeLinejoin="round"
+                strokeLinecap="round"
+                strokeWidth={2.5}
+                d="M17 12l-5 5-5-5"
+            />
         </svg>
     )
 }

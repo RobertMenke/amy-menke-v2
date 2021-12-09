@@ -1,13 +1,22 @@
 import React, { ForwardedRef } from 'react'
 import { ChevronDownIcon, FavouriteIcon, SectionIcon } from './SectionIcon'
+import amyAvatar from '../public/amy-menke-avatar.png'
+import Image from 'next/image'
 
 export const Counseling = React.forwardRef((props, ref: ForwardedRef<HTMLDivElement>) => (
     <>
         <div className={'mt-32 mx-8 md:mx-32 pb-8 lg:pb-32 mb-4 relative js-counseling-section'} ref={ref}>
-            <SectionIcon fromColor={'from-fuchsia-500'} toColor={'to-purple-600'}>
-                <FavouriteIcon />
-            </SectionIcon>
-            <h4 className={`text-fuchsia-500 font-extrabold mt-4 lg:mt-12`}>COUNSELING</h4>
+            <div className={'relative flex flex-col justify-start md:flex-row md:justify-between'}>
+                <div>
+                    <SectionIcon fromColor={'from-fuchsia-500'} toColor={'to-purple-600'} removeBottomMargin={true}>
+                        <FavouriteIcon />
+                    </SectionIcon>
+                    <h4 className={`text-fuchsia-500 font-extrabold mt-4 lg:mt-12`}>COUNSELING</h4>
+                </div>
+                <div className={'pt-8 md:p-0 flex justify-center items-center'}>
+                    <Image src={amyAvatar} width={140} height={140} alt={'Amy Menke'} />
+                </div>
+            </div>
             <h1 className={`text-3xl lg:text-5xl font-extrabold mt-12 lg:mt-20`}>My Counseling Philosophy</h1>
             <div className={'mt-8 lg:mt-12'}>
                 <span className={'leading-relaxed text-xl'}>

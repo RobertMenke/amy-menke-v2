@@ -41,7 +41,7 @@ export const IntakeForms = React.forwardRef((props, ref: ForwardedRef<HTMLDivEle
             <DownloadForm
                 title={'Counseling for Minors'}
                 description={'For any individual less than 18 years old'}
-                link={'/Counseling Intake for Minors.docx'}
+                link={'/Counseling Intake Minor.pdf'}
                 className={'mx-16'}
             />
             <DownloadForm
