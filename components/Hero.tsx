@@ -1,4 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
+import Image from 'next/image'
+import Link from 'next/link'
 import { SectionIcon, SunriseIcon } from './SectionIcon'
 
 interface Props {
@@ -15,14 +17,14 @@ export function Hero(props: Props) {
     }, [])
 
     return (
-        <div className={'flex relative'}>
-            <div className={'flex flex-col justify-between w-full lg:w-1/2'}>
+        <div className="flex relative">
+            <div className="flex flex-col justify-between w-full lg:w-1/2">
                 <div className="flex flex-col p-8 md:p-32 lg:w-full">
                     <TopNav {...props} />
                     <div className="text-left">
                         <SectionIcon
-                            fromColor={'from-green-400'}
-                            toColor={'to-cyan-500'}
+                            fromColor="from-green-400"
+                            toColor="to-cyan-500"
                             className={`${
                                 showElements ? 'opacity-100' : 'opacity-0'
                             } transition-opacity duration-700 fade-down`}
@@ -56,7 +58,7 @@ export function Hero(props: Props) {
                             } transition-opacity duration-700 fade-up leading-normal text-lg text-gray-500 mt-6 md:mt-12 md:text-xl lg:mx-0`}
                         >
                             Choose a happier, healthier you. Reach out to book an appointment today. I offer a free
-                            introductory phone call so that you can decide if we’re the right fit.
+                            introductory phone call so that you can decide if we&rsquo;re the right fit.
                         </p>
                         <p
                             className={`${
@@ -72,9 +74,10 @@ export function Hero(props: Props) {
                         >
                             <div>
                                 <a
-                                    target={'__blank'}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     href="mailto:amy.menke@gmail.com?subject=Counseling%20Inquiry&body=Hey%20Amy%2C%0D%0A%0D%0AI'm%20interested%20in%20learning%20more%20about%20counseling.%20Do%20you%20have%20an%20appointment%20available%3F"
-                                    className="w-48 rounded-md flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-green-500 hover:bg-green-700 md:py-4 md:text-lg md:px-10"
+                                    className="w-48 flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-green-500 hover:bg-green-700 md:py-4 md:text-lg md:px-10"
                                 >
                                     Email Me
                                 </a>
@@ -85,9 +88,9 @@ export function Hero(props: Props) {
                                 showElements ? 'opacity-100' : 'opacity-0'
                             } transition-opacity duration-700 fade-up mt-4`}
                         >
-                            <span className={'text-gray-700 hover:underline'}>
+                            <span className="text-gray-700 hover:underline">
                                 Call Me:{' '}
-                                <a className={'font-underline'} href={'tel:17274033165'}>
+                                <a className="font-underline" href="tel:17274033165">
                                     (727) 403-3165
                                 </a>
                             </span>
@@ -95,38 +98,33 @@ export function Hero(props: Props) {
                     </div>
                 </div>
                 <a
-                    href={'https://goo.gl/maps/nMZNowCThY6dJpcu5'}
-                    target={'__blank'}
+                    href="https://goo.gl/maps/nMZNowCThY6dJpcu5"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className={`${
                         showElements ? 'opacity-100' : 'opacity-0'
                     } transition-opacity duration-700 fade-up pl-8 md:pl-32 hover:underline cursor-pointer pb-4`}
                 >
                     <div>
-                        <span
-                            className={
-                                'mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:my-12 md:text-xl lg:mx-0'
-                            }
-                        >
+                        <span className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:my-12 md:text-xl lg:mx-0">
                             163 5th Ave NE
                         </span>
                     </div>
                     <div>
-                        <span
-                            className={
-                                'mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:my-12 md:text-xl lg:mx-0'
-                            }
-                        >
+                        <span className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:my-12 md:text-xl lg:mx-0">
                             St. Petersburg, FL, 33701
                         </span>
                     </div>
                 </a>
             </div>
             <div className="hidden lg:block lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 min-h-screen">
-                <img
-                    className="w-full object-cover sm:hidden md:hidden lg:block md:w-full md:h-full"
+                <Image
+                    className="object-cover"
                     src="/couple_medium.jpg"
                     alt="Couple Spending Time Outside"
-                    loading={'lazy'}
+                    fill
+                    sizes="50vw"
+                    priority
                 />
             </div>
             <svg
@@ -151,9 +149,9 @@ function TopNav(props: Props) {
 
     return (
         <div className="relative md:absolute flex space-x-4 transform -translate-y-4 md:-translate-y-16 -translate-x-3">
-            <a
-                href={'/counseling'}
-                className={'text-gray-400 hover:underline px-3 py-2 rounded-md text-sm font-medium'}
+            <Link
+                href="/counseling"
+                className="text-gray-400 hover:underline px-3 py-2 rounded-md text-sm font-medium"
                 onClick={(e) => {
                     e.preventDefault()
                     scrollTo(props.counselingRef)
@@ -161,10 +159,10 @@ function TopNav(props: Props) {
                 }}
             >
                 Counseling
-            </a>
-            <a
-                href={'#'}
-                className={'text-gray-400 hover:underline px-3 py-2 rounded-md text-sm font-medium'}
+            </Link>
+            <Link
+                href="/pricing"
+                className="text-gray-400 hover:underline px-3 py-2 rounded-md text-sm font-medium"
                 onClick={(e) => {
                     e.preventDefault()
                     scrollTo(props.pricingRef)
@@ -172,10 +170,10 @@ function TopNav(props: Props) {
                 }}
             >
                 Pricing
-            </a>
-            <a
-                href={'#'}
-                className={'text-gray-400 hover:underline px-3 py-2 rounded-md text-sm font-medium'}
+            </Link>
+            <Link
+                href="/forms"
+                className="text-gray-400 hover:underline px-3 py-2 rounded-md text-sm font-medium"
                 onClick={(e) => {
                     e.preventDefault()
                     scrollTo(props.formsRef)
@@ -183,7 +181,7 @@ function TopNav(props: Props) {
                 }}
             >
                 Forms
-            </a>
+            </Link>
         </div>
     )
 }

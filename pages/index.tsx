@@ -1,4 +1,4 @@
-import React from 'react'
+import { useRef } from 'react'
 import { Counseling } from '../components/Counseling'
 import { Footer } from '../components/Footer'
 import { Hero } from '../components/Hero'
@@ -6,22 +6,22 @@ import { IntakeForms } from '../components/IntakeForms'
 import { Pricing } from '../components/Pricing'
 
 export default function Home() {
-    const counselingRef = React.createRef<HTMLDivElement>()
-    const pricingRef = React.createRef<HTMLDivElement>()
-    const formsRef = React.createRef<HTMLDivElement>()
+    const counselingRef = useRef<HTMLDivElement>(null)
+    const pricingRef = useRef<HTMLDivElement>(null)
+    const formsRef = useRef<HTMLDivElement>(null)
 
     return (
         <>
             <Section>
                 <Hero counselingRef={counselingRef} pricingRef={pricingRef} formsRef={formsRef} />
             </Section>
-            <Section className={'relative bg-gray-50'}>
+            <Section className="relative bg-gray-50">
                 <Counseling ref={counselingRef} />
             </Section>
-            <Section className={'bg-royal-blue'}>
+            <Section className="bg-royal-blue">
                 <Pricing ref={pricingRef} />
             </Section>
-            <Section className={'relative'}>
+            <Section className="relative">
                 <IntakeForms ref={formsRef} />
             </Section>
             <Footer />
